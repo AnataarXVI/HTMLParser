@@ -1,7 +1,9 @@
 #!/usr/bin/python3 
 
 
+__description__ = "This tool is used to analyze the source code of an html page by recovering tags and comments"
 __version__ = "0.0.1"
+__author__ = "AnataarXVI"
 
 try:
 	import optparse
@@ -46,11 +48,8 @@ def parse_comment(content):
 
 def parse_script(content):
 
-	# php = re.compile("<\?([//\*\-\+\s|\w\(\)\.,:@<>$?;='\"\\\{\[\]`\}!&^%#]*)\?>")
 	soup = BeautifulSoup(content, 'html.parser')
 	scripts = soup.find_all("script")
-	# result_php = php.search(str(soup))
-
 
 	## Show all scripts 
 	for elements in scripts:
@@ -107,8 +106,9 @@ def Main():
 	Menu.add_option_group(Examples)
 
 	## For wrong or none arguments
-	if len(args) == 0 or options == {'comment':None, 'script':None}:
+	if len(args) == 0 or options == {'all':None, 'comment':None, 'script':None, 'form':None, 'link':None}:
 		Menu.print_help()
+		print("\n" +__description__)
 
 	## --all option 
 	if options.all == True and len(args) != 0 and len(args) < 2:
