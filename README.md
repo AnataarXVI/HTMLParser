@@ -26,6 +26,7 @@ HTMLParser will send a request to the indicated website and retrieve information
 # Installation
 
 Download the project : `https://github.com/AnataarXVI/htmlparser.git`
+Install packages : `pip install -r requirements.txt`
 
 ## Complete parsing
 
