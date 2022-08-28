@@ -2,8 +2,8 @@
 
 
 __description__ = "This tool is used to analyze the source code of an html page by recovering tags and comments"
-__version__ = "0.0.1"
-__author__ = "AnataarXVI"
+__version__ = "1.0.0"
+__author__ = "Anataar"
 
 try:
 	import optparse
@@ -76,14 +76,16 @@ def parse_link(content):
 	
 	soup = BeautifulSoup(content, 'html.parser')
 	links = soup.find_all("a", href=True)
-
+	filtered = 0
 	## Show all links 
 	for elements in links:
 		if len(elements['href']) > 1: ## Filtring for "#" and "/" links
 			print(elements['href'])
+		else:
+			filtered += 1
 	print()
 		
-	print(f"Link(s) found : {colored(len(links),'yellow')}")
+	print(f"Link(s) found : {colored(len(links)-filtered,'yellow')}")
 
 def Main():
 	## Menu options
