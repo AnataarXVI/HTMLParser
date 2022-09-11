@@ -35,6 +35,10 @@ Install packages : `pip install -r requirements.txt`
 ## Parsing script tag
 ![2022-08-18_20-28](/assets/2022-08-18_20-28.png)
 
+## Make a tree of the website
+
+![2022-09-11_19-46](/assets/2022-09-11_19-46.png)
+
 # Usage
 
 ```
@@ -48,6 +52,7 @@ Options:
   -s, --script   Find all scripts
   -f, --form     Find all forms
   -l, --link     Find all links
+  -t, --tree     Make a tree of the website directories
 
   Examples:
     python htmlparser.py -a <url>
@@ -55,8 +60,10 @@ Options:
     python htmlparser.py -s <url>
     python htmlparser.py -f <url>
     python htmlparser.py -l <url>
+    python htmlparser.py -t <url>
 
 This tool is used to analyze the source code of an html page by recovering tags and comments
+
 ```
 
 # Contributing
